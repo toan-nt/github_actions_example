@@ -9,7 +9,7 @@ on:
       
 jobs:
   check-links: #defind a job with id "check-links" that is stored within the job keys
-    runs-on: [ubuntu-latest, self-hosted]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
