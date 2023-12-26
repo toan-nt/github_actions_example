@@ -1,0 +1,22 @@
+name: Simple Actions Demo
+run-name: ${{ github.actor }} is testing out Github Actions
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+      
+jobs:
+  check-links: #defind a job with id "check-links" that is stored within the job keys
+    runs-on: [ubuntu-latest, self-hosted]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.13.0
+          cache: npm
+  
